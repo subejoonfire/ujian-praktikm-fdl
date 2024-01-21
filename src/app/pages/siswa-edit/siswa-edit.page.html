@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>edit siswa</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">edit siswa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="formSiswa" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">id siswa</ion-label>
+      <ion-input formControlName="id" readonly type="text" [(ngModel)]="siswa.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">nama</ion-label>
+      <ion-input formControlName="nama" type="text" [(ngModel)]="siswa.nama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">NIS</ion-label>
+      <ion-input formControlName="nis" type="text" [(ngModel)]="siswa.nis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Kelas</ion-label>
+      <ion-input formControlName="kelas" type="text" [(ngModel)]="siswa.kelas"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">jenis kelamin</ion-label>
+      <ion-input formControlName="jenis_kelamin" type="text" [(ngModel)]="siswa.jenis_kelamin"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-button type="submit">Update Data</ion-button>
+    </ion-item>
+  </form>
+</ion-content>

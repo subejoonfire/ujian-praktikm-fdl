@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>buku-detail M.FADIL HAMADA 2201301050</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">buku-detail
+        m.fadil hamada 2201301050
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngFor="let item of siswas">
+    <img src="{{foto}}?sig={{item.id}}" />
+    <ion-card-header>
+      <ion-card-title>{{ item.nama }}</ion-card-title>
+      <ion-card-title>{{ item.nnis }}</ion-card-title>
+      <ion-card-title>{{ item.kelas }}</ion-card-title>
+      <ion-card-subtitle>{{ item.jenis_kelamin }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ item.description }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

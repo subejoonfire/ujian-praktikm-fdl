@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>tambah siswa</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">tambah siswa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="formSiswa" (ngSubmit)="submitForm()">
+        <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input formControlName="nama" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">NIS</ion-label>
+      <ion-input formControlName="nis" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Kelas</ion-label>
+      <ion-input formControlName="kelas" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Jenis Kelamin</ion-label>
+      <ion-input formControlName="jenis_kelamin" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-button type="submit">Tambah Data</ion-button>
+    </ion-item>
+  </form>
+</ion-content>

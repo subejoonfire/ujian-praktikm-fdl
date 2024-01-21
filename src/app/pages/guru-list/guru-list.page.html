@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Data Guru</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" size="large" routerLink="/guru-add" routerDirection="forward" class="ion-padding ion-color-primary">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">Data Guru</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of gurus">
+      <ion-item button routerLink="/guru/{{item.id}}">
+        <ion-avatar slot="start">
+          <img src="{{foto}}?sig={{item.id}}" />
+        </ion-avatar>
+        <ion-label>{{ item.nama }}
+          <p>{{ item.nip }}</p>
+        </ion-label>
+        <ion-badge slot="end">{{ item.id }}</ion-badge>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option button routerLink="/guru-edit/{{item.id}}">Edit</ion-item-option>
+        <ion-item-option color="danger" (click)="deleteData(item.id)">Hapus</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
